@@ -10,6 +10,8 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var resultDice:ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,10 +20,10 @@ class MainActivity : AppCompatActivity() {
          //Toast.makeText(this, "Button Clicked", Toast.LENGTH_SHORT).show()
             rollDice()
         }
+        resultDice = findViewById(R.id.dice_image)
     }
 
     private fun rollDice() {
-        val resultDice:ImageView = findViewById(R.id.dice_image)
         val randomNumber = Random.nextInt(6) + 1
         val resultImage = when(randomNumber){
             1 -> R.drawable.dice_1
